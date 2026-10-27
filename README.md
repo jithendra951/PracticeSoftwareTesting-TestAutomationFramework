@@ -148,7 +148,6 @@ TestNG HTML reports: `index.html`, `emailable-report.html`, `testng-results.xml`
 
 This section serves as a placeholder. Customize these links before publishing to your GitHub profile:
 
-- **Author:** [Your Full Name / QA Automation Engineer]
-- **Email:** [your.email@example.com]
-- **LinkedIn:** https://www.linkedin.com/in/[your-profile]
-- **GitHub:** https://github.com/[your-username]
+- **Author:** Jithendra R
+- **LinkedIn:** https://www.linkedin.com/in/jithendra-r-0184b830b
+- **GitHub:** https://github.com/jithendra951
