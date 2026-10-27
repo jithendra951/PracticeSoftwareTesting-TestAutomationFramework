@@ -143,11 +143,3 @@ mvn clean test
 ## Reports
 
 TestNG HTML reports: `index.html`, `emailable-report.html`, `testng-results.xml` these will be present in `test-output/` directory.
-
-## Contact Information
-
-This section serves as a placeholder. Customize these links before publishing to your GitHub profile:
-
-- **Author:** Jithendra R
-- **LinkedIn:** https://www.linkedin.com/in/jithendra-r-0184b830b
-- **GitHub:** https://github.com/jithendra951
