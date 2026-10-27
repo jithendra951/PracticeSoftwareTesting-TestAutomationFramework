@@ -27,7 +27,7 @@ The project is developed in Eclipse and is intended as a portfolio project demon
 | Eclipse IDE | Development environment |
 
 ## Framework Structure
-
+```
 PracticeSoftwareTesting/
 ├── src/
 │   ├── main/
@@ -60,7 +60,7 @@ PracticeSoftwareTesting/
 ├── pom.xml
 ├── testng.xml
 └── README.md
-
+```
 
 ### Detailed Resources Description
 
