@@ -1,13 +1,9 @@
-# Compiled Java files
 /bin/
 *.class
-# Build output
 /target/
-# Log files
 *.log
-target
-test-output
-.settings
+test-output/
+.settings/
 .classpath
 .project
-allure-results
+allure-results/
