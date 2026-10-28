@@ -64,7 +64,7 @@ public class HomePage {
 	}
 
 	public void clickAddToCart(String quantity) {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(quantity_Tf));
+		wait.until(ExpectedConditions.elementToBeClickable(quantity_Tf));
 		MouseActionsUtility.scrollDown(driver, 500);
 		driver.findElement(quantity_Tf).clear();
 		driver.findElement(quantity_Tf).sendKeys(quantity);
@@ -72,7 +72,7 @@ public class HomePage {
 	}
 
 	public String getAddedToCartMsg() {
-		wait.until(ExpectedConditions.visibilityOfElementLocated(productAdded_alert));
+		wait.until(ExpectedConditions.elementToBeClickable(productAdded_alert));
 		String productAdded_msg = driver.findElement(productAdded_alert).getText();
 		driver.findElement(productAdded_alert).click();
 		return productAdded_msg;
