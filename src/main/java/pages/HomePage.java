@@ -64,8 +64,8 @@ public class HomePage {
 	}
 
 	public void clickAddToCart(String quantity) {
-		wait.until(ExpectedConditions.elementToBeClickable(quantity_Tf));
 		MouseActionsUtility.scrollDown(driver, 500);
+		wait.until(ExpectedConditions.elementToBeClickable(quantity_Tf));
 		driver.findElement(quantity_Tf).clear();
 		driver.findElement(quantity_Tf).sendKeys(quantity);
 		driver.findElement(addToCart_Btn).click();
