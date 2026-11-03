@@ -15,6 +15,7 @@ public class CartPage {
 	private By houseNumber_Tf = By.id("house_number");
 	private By paymentSuccess_Msg = By.xpath("//div[@data-test='payment-success-message']");
 	private By invoiceNumber = By.xpath("//div[@id='order-confirmation']/span");
+
 	// payment options
 	// bank transfer
 	private By bankName_Tf = By.id("bank_name");
@@ -37,7 +38,6 @@ public class CartPage {
 		this.driver = driver;
 	}
 
-
 	public void proceedFromCart() {
 		driver.findElement(proceedToCheckout_Btn1).click();
 	}
@@ -49,10 +49,6 @@ public class CartPage {
 	public void enterHouseNumberAndProceed(String houseNumber) {
 		driver.findElement(houseNumber_Tf).sendKeys(houseNumber);
 		driver.findElement(proceedToCheckout_Btn3).click();
-	}
-
-	public void clickConfirmBtn() {
-		driver.findElement(finish_Btn).click();
 	}
 
 	public void paymentBankTransfer(String bankName, String accountName, String accountNumber) {
@@ -77,9 +73,9 @@ public class CartPage {
 		driver.findElement(finish_Btn).click();
 	}
 
-	public void paymentBuyNowPayLater(String installmentsMonths) {
+	public void paymentBuyNowPayLater(String months) {
 		DropdownUtility.selectByValue(driver.findElement(payment_Dropdown), "buy-now-pay-later");
-		DropdownUtility.selectByValue(driver.findElement(monthlyInstallment_Dropdown), installmentsMonths);
+		DropdownUtility.selectByValue(driver.findElement(monthlyInstallment_Dropdown), months);
 		driver.findElement(finish_Btn).click();
 	}
 
@@ -87,6 +83,10 @@ public class CartPage {
 		DropdownUtility.selectByValue(driver.findElement(payment_Dropdown), "gift-card");
 		driver.findElement(giftCardNumber_Tf).sendKeys(giftCardNumber);
 		driver.findElement(validationCode_Tf).sendKeys(validationCode);
+		driver.findElement(finish_Btn).click();
+	}
+
+	public void clickConfirmBtn() {
 		driver.findElement(finish_Btn).click();
 	}
 
