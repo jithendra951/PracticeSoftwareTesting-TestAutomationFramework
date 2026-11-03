@@ -9,7 +9,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class BrowserUtility {
-	// initBrowser - intialize browser or method name can be given as browserSetup()
 	public static WebDriver initBrowser(String browser) {
 		switch (browser) {
 		case "chrome":
@@ -19,7 +18,7 @@ public class BrowserUtility {
 		case "edge":
 			return new EdgeDriver(edgeOptions());
 		}
-		return new ChromeDriver(chromeOptions());// if the input is invalid chrome will be the default
+		throw new IllegalArgumentException("unsupported browser: " + browser);
 	}
 
 	// browser options
