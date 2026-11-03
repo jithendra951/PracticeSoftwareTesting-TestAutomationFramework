@@ -6,4 +6,5 @@ test-output/
 .settings/
 .classpath
 .project
+screenshot/
 allure-results/
