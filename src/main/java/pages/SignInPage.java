@@ -15,6 +15,9 @@ public class SignInPage {
 	private By registerAccount_Link = By.xpath("//a[@aria-label='Register your account']");
 	private By loginHeader = By.xpath("//div[@class='col-lg-6 auth-form']/h3");
 	private By myAccountHeader = By.xpath("//h1[@data-test='page-title']");
+	private By emailError = By.id("email-error");
+	private By passwordError = By.id("password-error");
+	private By loginError = By.xpath("//div[@data-test='login-error']");
 
 	WebDriver driver;
 	WebDriverWait wait;
@@ -25,7 +28,7 @@ public class SignInPage {
 	}
 
 	public void clickRegisterAccount() {
-		MouseActionsUtility.scrollElementToBottom(driver, driver.findElement(registerAccount_Link));
+		MouseActionsUtility.scrollDown(driver, 500);
 		wait.until(ExpectedConditions.elementToBeClickable(registerAccount_Link));
 		driver.findElement(registerAccount_Link).click();
 	}
@@ -40,4 +43,17 @@ public class SignInPage {
 	public String getLoginSuccessMsg() {
 		return driver.findElement(myAccountHeader).getText();
 	}
+
+	public String getEmailErrorMsg() {
+		return driver.findElement(emailError).getText();
+	}
+
+	public String getPasswordErrorMsg() {
+		return driver.findElement(passwordError).getText();
+	}
+	
+	public String getInvalidLoginErrorMsg() {
+		return driver.findElement(loginError).getText();
+	}
+	
 }
