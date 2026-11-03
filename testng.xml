@@ -4,24 +4,33 @@
 	<test name="Test_Chrome">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<class name="tests.AuthenticationTest" />
 			<class name="tests.EndToEndOrderTest" />
+			<class name="tests.PaymentsTest" />
+			<class name="tests.AuthenticationTest" />
+			<class name="tests.InvalidLoginTest" />
+			<class name="tests.LocalizationTest" />
 		</classes>
 	</test> <!--
 	Test -->
 	<test name="Test_Firefox">
 		<parameter name="browser" value="firefox"></parameter>
 		<classes>
-			<class name="tests.AuthenticationTest" />
 			<class name="tests.EndToEndOrderTest" />
+			<class name="tests.PaymentsTest" />
+			<class name="tests.AuthenticationTest" />
+			<class name="tests.InvalidLoginTest" />
+			<class name="tests.LocalizationTest" />
 		</classes>
 	</test> <!--
 	Test -->
-	<test name="Test_Egde">
+	<test name="Test_Edge">
 		<parameter name="browser" value="edge"></parameter>
 		<classes>
-			<class name="tests.AuthenticationTest" />
 			<class name="tests.EndToEndOrderTest" />
+			<class name="tests.PaymentsTest" />
+			<class name="tests.AuthenticationTest" />
+			<class name="tests.InvalidLoginTest" />
+			<class name="tests.LocalizationTest" />
 		</classes>
 	</test> <!--
 	Test -->
