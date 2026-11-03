@@ -11,7 +11,7 @@ import utilities.MouseActionsUtility;
 public class HomePage {
 
 	private By home_Btn = By.xpath("//a[@data-test='nav-home']");
-	private By SingIn_Btn = By.xpath("//a[@data-test='nav-sign-in']");
+	private By SignIn_Btn = By.xpath("//a[@data-test='nav-sign-in']");
 	private By Cart_Btn = By.xpath("//a[@href='/checkout']");
 	private By profile_Options = By.id("menu");
 	private By logout_Btn = By.xpath("//a[@data-test='nav-sign-out']");
@@ -35,7 +35,7 @@ public class HomePage {
 	}
 
 	public void clickSigninButton() {
-		driver.findElement(SingIn_Btn).click();
+		driver.findElement(SignIn_Btn).click();
 	}
 
 	public void clickCartButton() {
