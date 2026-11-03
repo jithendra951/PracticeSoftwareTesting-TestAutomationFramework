@@ -5,17 +5,19 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import base.BasePage;
+import base.BaseTest;
+import utilities.ReadPropertyUtility;
 
-public class EndToEndOrderTest extends BasePage {
+public class EndToEndOrderTest extends BaseTest {
 
 	@Test
 	public void orderProduct() throws IOException {
+		completeRegistration();
 		signinpg.login(registerpg.emailId, registerpg.password);
 		Assert.assertEquals(signinpg.getLoginSuccessMsg(), "My account");
 		homepg.clickHomeButton();
-		homepg.selectProduct("Claw Hammer with Shock Reduction Grip");
-		homepg.clickAddToCart("2");
+		homepg.selectProduct(ReadPropertyUtility.getProperty("productname"));
+		homepg.clickAddToCart(ReadPropertyUtility.getProperty("productquantity"));
 		Assert.assertEquals(homepg.getAddedToCartMsg(), "Product added to shopping cart.");
 		homepg.clickCartButton();
 		cartpg.proceedFromCart();
