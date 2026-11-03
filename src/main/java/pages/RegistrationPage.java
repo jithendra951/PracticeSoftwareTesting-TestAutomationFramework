@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.DropdownUtility;
 import utilities.MouseActionsUtility;
+import utilities.ReadDataUtility;
 
 public class RegistrationPage {
 
@@ -29,32 +30,31 @@ public class RegistrationPage {
 	public String emailId;
 	public String password;
 	public String houseNumber;
-	String[] userdetails;
 
 	WebDriver driver;
 	WebDriverWait wait;
 
-	public RegistrationPage(WebDriver driver, WebDriverWait wait, String[] userdetails) {
+	public RegistrationPage(WebDriver driver, WebDriverWait wait) {
 		this.driver = driver;
 		this.wait = wait;
-		this.userdetails = userdetails;
 		emailId = randomEmail();
 		password = randomPassword();
 	}
 
-	public void createUser() throws IOException {
-		driver.findElement(firstname_Tf).sendKeys(userdetails[0]);
-		driver.findElement(lastname_Tf).sendKeys(userdetails[1]);
-		driver.findElement(dob_Tf).sendKeys(userdetails[2]);
-		if (userdetails[3].length() == 2) {
-			DropdownUtility.selectByValue(driver.findElement(countryDropdown), userdetails[3]);
+	public void registerUser(int userId, String sheetName) throws IOException {
+		String[] userdetail = ReadDataUtility.getRowData(userId, sheetName);
+		driver.findElement(firstname_Tf).sendKeys(userdetail[0]);
+		driver.findElement(lastname_Tf).sendKeys(userdetail[1]);
+		driver.findElement(dob_Tf).sendKeys(userdetail[2]);
+		if (userdetail[3].length() == 2) {
+			DropdownUtility.selectByValue(driver.findElement(countryDropdown), userdetail[3]);
 		} else {
-			DropdownUtility.selectByVisibleText(driver.findElement(countryDropdown), userdetails[3]);
+			DropdownUtility.selectByVisibleText(driver.findElement(countryDropdown), userdetail[3]);
 		}
-		driver.findElement(postalCode_Tf).sendKeys(userdetails[4]);
-		houseNumber = userdetails[5];
+		driver.findElement(postalCode_Tf).sendKeys(userdetail[4]);
+		houseNumber = userdetail[5];
 		driver.findElement(houseNumber_Tf).sendKeys(houseNumber);
-		driver.findElement(phone_Tf).sendKeys(userdetails[6]);
+		driver.findElement(phone_Tf).sendKeys(userdetail[6]);
 		driver.findElement(email_Tf).sendKeys(emailId);
 		driver.findElement(password_Tf).sendKeys(password);
 		driver.findElement(showPassword).click();
